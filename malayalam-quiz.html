@@ -36,6 +36,12 @@
     margin: 0 0 1.2em 0;
     color: #555;
   }
+   p.credit {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 1.2em 0;
+    color: #dc3545;
+  }
   form {
     background: white;
     box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
@@ -136,7 +142,7 @@
 </style>
 </head>
 <body>
-  <h1>എന്റെ കേരളം പ്രദർശന ക്വിസ്</h1>
+  <h1>എന്റെ കേരളം - ഹോമിയോപ്പതി - പ്രദർശന ക്വിസ്</h1>
   <p class="instructions">എല്ലാ ചോദ്യങ്ങൾക്കും ഉത്തരം നൽകിയാൽ സമ്മാനം ലഭിക്കും!</p>
 
   <form id="quizForm">
@@ -215,7 +221,7 @@
         </li>
         <li>
           <input type="radio" id="q3a1" name="q3" value="B" />
-          <label for="q3a1">ബ) പൊട്ടൻസ് ചെയ്തെടുക്കൽ</label>
+          <label for="q3a1">ബ) പൊട്ടൻട്ടായിസ് ചെയ്തെടുക്കൽ</label>
         </li>
         <li>
           <input type="radio" id="q3a2" name="q3" value="C" />
@@ -256,7 +262,7 @@
   <div id="result" aria-live="polite"></div>
 
   <script>
-    const correctAnswers = ['A', 'B', 'B', 'B', 'B'];
+    const correctAnswers = ['A', 'C', 'D', 'B', 'A'];
     const form = document.getElementById('quizForm');
     const submitBtn = document.getElementById('submitBtn');
     const questions = document.querySelectorAll('.question');
@@ -314,6 +320,6 @@
       resultDiv.scrollIntoView({behavior: 'smooth'});
     });
   </script>
-  <p>Created by Dr. S. Sree Kumar, M.O, GHD Thodiyoor</p>
+  <p class="credit">Created by Dr. S. Sree Kumar, M.O, GHD Thodiyoor</p>
 </body>
 </html>
