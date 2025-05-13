@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>എന്റെ കേരളം -ഹോമിയോപ്പതി ക്വിസ്</title>
+<link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet">
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Manjari', 'Segoe UI', sans-serif;
+    margin: 0; padding: 0;
+    background: #f4f6f8;
+    color: #333;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1em;
+  }
+  h1 {
+    font-size: 1.8rem;
+    color: #004aad;
+    text-align: center;
+    margin-bottom: 0.2em;
+  }
+  p.instructions {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 1.2em 0;
+    color: #555;
+  }
+  form {
+    background: white;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    padding: 1em 1.2em 1.5em 1.2em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .question {
+    margin-bottom: 1em;
+  }
+  .question h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6em;
+    font-weight: 600;
+  }
+  .options {
+    list-style: none;
+    padding-left: 0;
+  }
+  .options li {
+    margin-bottom: 0.45em;
+  }
+  label {
+    cursor: pointer;
+    padding: 0.35em 0.5em;
+    border-radius: 8px;
+    display: block;
+    border: 2px solid transparent;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+  }
+  input[type='radio'] {
+    display: none;
+  }
+  input[type='radio']:checked + label {
+    background-color: #004aad;
+    color: white;
+    border-color: #004aad;
+  }
+  input[type='radio']:disabled + label {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  input[type='radio']:focus-visible + label {
+    outline: 2px solid #0077ff;
+    outline-offset: 2px;
+  }
+  button {
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    padding: 0.85em 1.2em;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    position: sticky;
+    bottom: 20px;
+  }
+  button:disabled {
+    background-color: #a2c0ff;
+    cursor: not-allowed;
+  }
+  #result {
+    margin-top: 1em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #004aad;
+    text-align: center;
+  }
+  .correct {
+    background-color: #d4edda;
+    border-color: #28a745 !important;
+    color: #155724 !important;
+  }
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+  }
+  .feedback-emoji {
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
+  @media (max-width: 350px) {
+    body {
+      padding: 0.8em;
+      max-width: 100vw;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    button {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>എന്റെ കേരളം  ഹോമിയോപ്പതി ക്വിസ്</h1>
+  <p class="instructions">എല്ലാ ചോദ്യങ്ങൾക്കും ശരിയായ ഉത്തരം നൽകി സമ്മാനം നേടൂ !!</p>
+
+  <form id="quizForm">
+    <div class="question" data-qid="0">
+      <h2>1. ഹോമിയോപ്പതിയുടെ സ്ഥാപകൻ ആരാണ്?</h2>
+      <ul class="options">
+        <li>
+          <input type="radio" id="q0a0" name="q0" value="A" />
+          <label for="q0a0">എ) സാമുവൽ ഹാനിമാൻ</label>
+        </li>
+        <li>
+          <input type="radio" id="q0a1" name="q0" value="B" />
+          <label for="q0a1">ബ) ഹിപ്പോക്രാറ്റ്സ്</label>
+        </li>
+        <li>
+          <input type="radio" id="q0a2" name="q0" value="C" />
+          <label for="q0a2">സ) ഗാൽവ</label>
+        </li>
+        <li>
+          <input type="radio" id="q0a3" name="q0" value="D" />
+          <label for="q0a3">ഡ) അവിസെന്ന</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question" data-qid="1">
+      <h2>2. ഹോമിയോപ്പതിയുടെ പ്രധാന സിദ്ധാന്തമാണ്:</h2>
+      <ul class="options">
+        <li>
+          <input type="radio" id="q1a0" name="q1" value="A" />
+          <label for="q1a0">എ) സമം സമം സഹയിക്കുന്നു</label>
+        </li>
+        <li>
+          <input type="radio" id="q1a1" name="q1" value="B" />
+          <label for="q1a1">ബ) വ്യത്യസ്തം വ്യത്യസ്തത്തെ ചികിത്സിക്കുന്നു</label>
+        </li>
+        <li>
+          <input type="radio" id="q1a2" name="q1" value="C" />
+          <label for="q1a2">സ) അളവ് മാറാത്ത മരുന്ന്</label>
+        </li>
+        <li>
+          <input type="radio" id="q1a3" name="q1" value="D" />
+          <label for="q1a3">ഡ) രോഗിയുടെ മനസ്ഥിതി മാത്രം കണക്കാക്കുന്നു</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question" data-qid="2">
+      <h2>3. ഹോമിയോപ്പതിയിൽ പലപ്പോഴ് ഉപയോഗിക്കുന്ന ഒരു സാധാരണ മരുന്നാണ്:</h2>
+      <ul class="options">
+        <li>
+          <input type="radio" id="q2a0" name="q2" value="A" />
+          <label for="q2a0">എ) ആർനിക്ക</label>
+        </li>
+        <li>
+          <input type="radio" id="q2a1" name="q2" value="B" />
+          <label for="q2a1">ബ) ബെല്ലഡോണ</label>
+        </li>
+        <li>
+          <input type="radio" id="q2a2" name="q2" value="C" />
+          <label for="q2a2">സ) കാൾസ്ലോ</label>
+        </li>
+        <li>
+          <input type="radio" id="q2a3" name="q2" value="D" />
+          <label for="q2a3">ഡ) ആലിസ്</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question" data-qid="3">
+      <h2>4. ഹോമിയോപ്പതിയിൽ മരുന്നുകൾ നിർമ്മിക്കുന്നതിനായി ഉപയോഗിക്കുന്ന പ്രധാന രീതിയാണ്:</h2>
+      <ul class="options">
+        <li>
+          <input type="radio" id="q3a0" name="q3" value="A" />
+          <label for="q3a0">എ) പൊട്ടൻസ് ചെയ്തെടുക്കൽ</label>
+        </li>
+        <li>
+          <input type="radio" id="q3a1" name="q3" value="B" />
+          <label for="q3a1">ബ) ആൽക്കഹോൾ ചെയ്തെടുക്കൽ</label>
+        </li>
+        <li>
+          <input type="radio" id="q3a2" name="q3" value="C" />
+          <label for="q3a2">സ) സ്റ്റീമിംഗ്</label>
+        </li>
+        <li>
+          <input type="radio" id="q3a3" name="q3" value="D" />
+          <label for="q3a3">ഡ) ബുർനിംഗ്</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="question" data-qid="4">
+      <h2>5. ഹോമിയോപ്പതിയിൽ മരുന്നുകളുടെ പുനർവിതരണത്തിനായി ഉപയോഗിക്കുന്ന പ്രക്രിയയാണ്:</h2>
+      <ul class="options">
+        <li>
+          <input type="radio" id="q4a0" name="q4" value="A" />
+          <label for="q4a0">എ) പുനർവിതരണം</label>
+        </li>
+        <li>
+          <input type="radio" id="q4a1" name="q4" value="B" />
+          <label for="q4a1">ബ) പുനർസൃഷ്ടി</label>
+        </li>
+        <li>
+          <input type="radio" id="q4a2" name="q4" value="C" />
+          <label for="q4a2">സ) പുനർമിശ്രണം</label>
+        </li>
+        <li>
+          <input type="radio" id="q4a3" name="q4" value="D" />
+          <label for="q4a3">ഡ) പുനർസംസ്കരണം</label>
+        </li>
+      </ul>
+    </div>
+
+    <button type="submit" id="submitBtn" disabled>ഉത്തരങ്ങൾ സമർപ്പിക്കുക</button>
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+
+  <script>
+    const correctAnswers = ['A', 'A', 'A', 'A', 'A'];
+    const form = document.getElementById('quizForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const questions = document.querySelectorAll('.question');
+    const resultDiv = document.getElementById('result');
+    const answerIndexes = correctAnswers.map(l => l.charCodeAt(0) - 65);
+
+    form.addEventListener('change', () => {
+      let allAnswered = true;
+      for(let i=0; i<questions.length; i++){
+        const name = 'q' + i;
+        const answered = form.querySelector(`input[name="${name}"]:checked`);
+        if(!answered){
+          allAnswered = false;
+          break;
+        }
+      }
+      submitBtn.disabled = !allAnswered;
+      resultDiv.textContent = '';
+      questions.forEach((q) => {
+        q.querySelectorAll('li label').forEach(label => {
+          label.classList.remove('correct','incorrect');
+        });
+      });
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      // Block multiple submissions
+      if(form.classList.contains('submitted')) return;
+      form.classList.add('submitted');
+
+      let score = 0;
+      
+      questions.forEach((q, idx) => {
+        const selected = form.querySelector(`input[name="q${idx}"]:checked`);
+        const selectedIndex = selected ? selected.value.charCodeAt(0) - 65 : -1;
+        const correctIndex = answerIndexes[idx];
+        const optionsLabels = q.querySelectorAll('li label');
+
+        optionsLabels.forEach(label => label.classList.remove('correct','incorrect'));
+        
+        const correctLabel = q.querySelector(`[for="q${idx}a${correctIndex}"]`);
+        correctLabel.classList.add('correct');
+        
+        if(selectedIndex !== correctIndex && selectedIndex !== -1) { 
+          const wrongLabel = q.querySelector(`[for="q${idx}a${selectedIndex}"]`);
+          wrongLabel.classList.add('incorrect');
+        }
+        
+        if(selectedIndex === correctIndex) score++;
+      });
+
+      // Disable all inputs
+      const allRadios = document.querySelectorAll('input[type="radio"]');
+      allRadios.forEach(radio => radio.disabled = true);
+      
+      // Update submit button
+      submitBtn.disabled = true;
+      submitBtn.textContent = "സമർപ്പിച്ചു";
+
+      // Show results
+      const emoji = score === correctAnswers.length ? 
+        '🎉🎉🎉' : score >= 3 ? '👍' : '😞';
+      resultDiv.innerHTML = `
+        <span class="feedback-emoji">${emoji}</span><br>
+        നിങ്ങളുടെ സ്കോർ: <strong>${score}</strong>/${correctAnswers.length}
+        <div style="margin-top:1em;color:#666">ക്വിസ് പൂർത്തിയായി. നന്ദി!</div>
+      `;
+      resultDiv.scrollIntoView({behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>
